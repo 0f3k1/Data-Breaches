@@ -83,7 +83,7 @@ activation status
 locale
 ```
 
-** I will very briefly talk about `gam_audiences` and `audiences_member_of` at the end because those are the most interesting... **
+**I will very briefly talk about `gam_audiences` and `audiences_member_of` at the end because those are the most interesting...**
 
 
 
