@@ -1,12 +1,12 @@
-Heads up there isn't a lot to explain because a lot of the insights about the data breach aren't publicly disclosed yet so bare that in mind as you read through it.
+Heads up there isn't a lot to explain because a lot of the insights about the data breach aren't publicly disclosed yet, so bear that in mind as you read through it.
 
 ## What happened?
 
-Back in August 2026, a dataset containing more than 7.3 million Chess.com records appeared on a forum called BreachForums. At first, this sounds like a normal data breach where someone hacking into Chess.com and was able to dump a bunch of information from a database.
+Back in August 2026, a dataset containing more than 7.3 million Chess.com records appeared on a forum called BreachForums. At first, this sounds like a normal data breach where someone hacked into Chess.com and was able to dump a bunch of information from a database.
 
-However... the available evidence points more toward automated data harvesting, also commonly reffered to as scraping.
+However... the available evidence suggests something more like automated data harvesting, also commonly referred to as scraping.
 
-The important difference is that there is currently no evidence showing that the person who created the dataset broke into chess.com's internal database. Instead, it appears that information was collected through Chess.com's web-facing systems over time. 
+The important difference is that there is currently no evidence showing that the person who created the dataset broke into Chess.com's internal database. Instead, it appears that information was collected through Chess.com's web-facing systems over time. 
 
 ### Step 1: Start with Existing Email Addresses
 
@@ -25,12 +25,12 @@ mike@example.com
 At this point, these are just email addresses. We don't necessarily know whether any of them have Chess.com accounts.
 
 ### Step 2: Check the Emails Against Chess.com
-Chess.com says its lookup functionality was used to find profile information associated with matching email addresses. Which was a functionality that was abused during their 2023 breach as well...
+Chess.com says its lookup functionality was used to find profile information associated with matching email addresses. This was a functionality that was abused during their 2023 breach as well...
 
 The Basic idea is:
 ``` Existing email address -> Chess.com lookup -> Does it match a Chess.com account -> YES / NO ```
 
-It's that simple, If there was no match, that email wasn't useful for finding a Chess.com account. 
+It's that simple. If there was no match, that email wasn't useful for finding a Chess.com account. 
 
 If there was a match, the email could now be connected to a Chess.com user.
 
@@ -40,7 +40,7 @@ That connection is important
 
 Before, someone had an email address.
 
-Great, Now they potentially know:
+Great, now they potentially know:
 ``` john@example.com -> ChessPlayer123 ```
 
 Just to briefly mention, we do not currently know the exact endpoint or request used for this lookup. Chess.com has referred to it as a lookup function, but the sources I reviewed don't document the exact 2026 HTTP request. 
@@ -70,7 +70,7 @@ last login
 
 <img width="948" height="492" alt="image" src="https://github.com/user-attachments/assets/fbc8b11e-819b-44b3-91cb-7f8dcb87a0f7" />
 
-To be quite honest, a lot of this information is already public information that can nroamlly be associated with a Chess.com profilke, such as Usernames, ratings, titles, user-provided profile information (location, phone number, email), and friends.
+To be quite honest, a lot of this information is already public information that can normally be associated with a Chess.com profile, such as Usernames, ratings, titles, user-provided profile information (location, phone number, email), and friends.
 
 However, the interesting thing is that we do not know exactly how every field in the leaked dataset was obtained.
 
@@ -85,5 +85,17 @@ locale
 
 **I will very briefly talk about `gam_audiences` and `audiences_member_of` at the end because those are the most interesting...**
 
+### Step 4: Automate the Process
 
+Doing this manually for millions of email addresses would take forever. 
+
+Instead, the evidence suggests the collection process had to be automated.
+
+```Take an email -> Check Chess.com -> Account found? -> Collect available information -> Save it -> Move to next email -> Repeat```
+
+Researchers found that the records appeared to have been collected over nine consecutive days, rather than all at once.
+
+Interestingly enough, they also found duplicate user IDs, meaning some Chess.com accounts appeared to have been collected more than once.
+
+This pattern is one reason researchers believe the dataset was created through automated harvesting rather than someone simply downloading a Chess.com database.
 
