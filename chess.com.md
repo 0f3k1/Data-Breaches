@@ -99,3 +99,46 @@ Interestingly enough, they also found duplicate user IDs, meaning some Chess.com
 
 This pattern is one reason researchers believe the dataset was created through automated harvesting rather than someone simply downloading a Chess.com database.
 
+### Why Are There 7.3 Million Records but Only 4.65 Million Emails?
+
+This confused me at first too.
+
+The dataset reportedly contained
+```7.3 million total records```
+
+but Have I Been Pwned identified approximately:
+```4.65 million unique email addresses```
+
+That doesn't mean another ~2.7 million emails were discovered somewhere else.
+
+The 7.3 million number represents records, not unique email addresses.
+
+The dataset reportedly contained duplicate accounts, and not every record contained a full email address.
+
+So:
+```7.3M TOTAL RECORDS -> some duplicate accounts + some records without full emails -> ~4.65M UNIQUE EMAILS```
+
+That distinction is really important when talking about the size of the incident.
+
+### So Was Chess.com Actually Hacked?
+Based on the information currently available, there is no evidence showin that someone broke into Chess.com's internal database and downloaded millions of users. 
+
+That's why it seems like automated data harvesting.
+
+### What We Still Don't Know
+This is probably the most important part.
+
+We do not know the complete technical attack chain. 
+
+We currently don't know the exact 2026 endpoint used for the email lookup. 
+
+We don't know exactly what that lookup returned. 
+
+We don't know whether one request or multiple requests were used to collect the information. 
+
+And we don't know the exact source of every field contained in the dataset. 
+
+So rather than guessing, I'm going to mark those parts of the attack chain as unknown. That leaves us with:
+```External email list -> Chess.com lookup -> Matching account ->  Additional account information -> Automated collection -> 7.3M records```
+
+### More Information and Insight...
