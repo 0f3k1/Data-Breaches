@@ -28,7 +28,7 @@ At this point, these are just email addresses. We don't necessarily know whether
 Chess.com says its lookup functionality was used to find profile information associated with matching email addresses. Which was a functionality that was abused during their 2023 breach as well...
 
 The Basic idea is:
-``` Existing email address -> Chess.com lookup -> Does it match a Chess.com account -> Yes / NO ```
+``` Existing email address -> Chess.com lookup -> Does it match a Chess.com account -> YES / NO ```
 
 It's that simple, If there was no match, that email wasn't useful for finding a Chess.com account. 
 
@@ -69,4 +69,21 @@ last login
 ```
 
 <img width="948" height="492" alt="image" src="https://github.com/user-attachments/assets/fbc8b11e-819b-44b3-91cb-7f8dcb87a0f7" />
+
+To be quite honest, a lot of this information is already public information that can nroamlly be associated with a Chess.com profilke, such as Usernames, ratings, titles, user-provided profile information (location, phone number, email), and friends.
+
+However, the interesting thing is that we do not know exactly how every field in the leaked dataset was obtained.
+
+For example, the public reporting does not tell us exactly which 2026 request returned:
+```
+UUID
+user ID
+verification status
+activation status
+locale
+```
+
+** I will very briefly talk about `gam_audiences` and `audiences_member_of` at the end because those are the most interesting... **
+
+
 
