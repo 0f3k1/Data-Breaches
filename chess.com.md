@@ -120,13 +120,13 @@ But why is this important? In this case, the Chess.com dataset contained version
 
 This gave the researchers a way to check whether the leaked Chess.com account data was legitimate.
 
-Think about it like this: let's say I created a Chess.com account right now, on September 16, 2026, at 7:58 PM. At around the same time, Chess.com generates a UUID for my account. Since that UUID contains a timestamp, researchers could decode it and compare it with the time my account was created. If the two timestamps match, it provides strong evidence that the UUID and account information are legitimate.
+Think about it like this: let's say I created a Chess.com account right now, on September 16, 2026, at 7:58 PM. At around the same time, a version 1 UUID is associated with my account. Since that UUID contains a timestamp, researchers could decode it and compare it with the time my account was created. If the two timestamps match, it provides strong evidence that the UUID and account information are legitimate.
 
 Researchers did this across a sample of 200,000 records and found that the UUID timestamps matched the Chess.com account creation dates. This gave them strong evidence that the data was legitimate.
 
 2. But now, the most interesting part of this whole blog is the `gam_audiences` and `audiences_member_of` fields.
 
-`gam_audiences` field refers to Google Ad Manager audiences, or groups used for advertising and targeting, while `audiences_member_of` indicates which of those audience groups a particular user belonged to.
+`gam_audiences` field appears to refer to Google Ad Manager audiences, or groups used for advertising and targeting, while `audiences_member_of` indicates which of those audience groups a particular user belonged to.
 
 These fields were reported to contain audience segmentation information, such as trial eligibility, experiment groups, lapsed-user groups, and rating-based targeting. 
 
@@ -141,4 +141,5 @@ At this point, we simply don't know. Without knowing the exact endpoint or reque
 https://haveibeenpwned.com/Breach/Chess2026 
 https://securityaffairs.com/197174/breaking-news/chess-com-leak-exposes-7-3-million-users-evidence-points-to-scraping.html
 https://optmsg.com/blog/breach-breakdown/chess-com-data-breach/
+https://news.ycombinator.com/item?id=49691584
 If you want a better understanding of the structure of UUIDs, you can check out: https://www.sohamkamani.com/uuid-versions-explained/
