@@ -10,7 +10,7 @@ The important difference is that there is currently no evidence showing that the
 
 ### Step 1: Start with Existing Email Addresses
 
-The individual who created the dataset appears to have started with a large list of existing email addresses
+The individual who created the dataset appears to have started with a large list of existing email addresses.
 
 This idea is supported by Have I Been Pwned. Of the approximately 4.65 million unique email addresses found in the dataset, HIBP reported that 99% had already appeared in previous data breaches.
 
@@ -28,7 +28,7 @@ The next step appears to have involved checking the email addresses against Ches
 
 If an email matched an account, the person collecting the data could then associate that email with additional Chess.com account information.
 
-The Basic idea is:
+The basic idea is:
 ``` Existing email address -> Chess.com lookup -> Does it match a Chess.com account -> YES / NO ```
 
 However, we don't know exactly how this check was performed. The exact endpoint, request, or method used to connect these email addresses to Chess.com accounts has not been publicly disclosed.
@@ -126,7 +126,7 @@ Researchers did this across a sample of 200,000 records and found that the UUID 
 
 2. But now, the most interesting part of this whole blog is the `gam_audiences` and `audiences_member_of` fields.
 
-`gam_audiences` field appears to refer to Google Ad Manager audiences, or groups used for advertising and targeting, while `audiences_member_of` indicates which of those audience groups a particular user belonged to.
+The `gam_audiences` field appears to refer to Google Ad Manager audiences, or groups used for advertising and targeting, while `audiences_member_of` indicates which of those audience groups a particular user belonged to.
 
 These fields were reported to contain audience segmentation information, such as trial eligibility, experiment groups, lapsed-user groups, and rating-based targeting. 
 
