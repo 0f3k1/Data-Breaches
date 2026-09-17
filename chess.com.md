@@ -10,7 +10,7 @@ The important difference is that there is currently no evidence showing that the
 
 ### Step 1: Start with Existing Email Addresses
 
-The individual who created the dataset apperas to have started with a large list of exisintg email addresses
+The individual who created the dataset appears to have started with a large list of existing email addresses
 
 This idea is supported by Have I Been Pwned. Of the approximately 4.65 million unique email addresses found in the dataset, HIBP reported that 99% had already appeared in previous data breaches.
 
@@ -77,7 +77,7 @@ locale
 
 Doing this manually for millions of email addresses would take forever. 
 
-Instead, the evidence suggests the collection process had to be automated.
+Instead, the evidence suggests the collection process was automated.
 
 ```Take an email -> Check Chess.com -> Account found? -> Collect available information -> Save it -> Move to next email -> Repeat```
 
@@ -122,7 +122,7 @@ This gave the researchers a way to check whether the leaked Chess.com account da
 
 Think about it like this: let's say I created a Chess.com account right now, on September 16, 2026, at 7:58 PM. At around the same time, Chess.com generates a UUID for my account. Since that UUID contains a timestamp, researchers could decode it and compare it with the time my account was created. If the two timestamps match, it provides strong evidence that the UUID and account information are legitimate.
 
-Researchers did this across thousands of records and found that the UUID timestamps matched the Chess.com account creation dates. This gave them strong evidence that the data was legitimate.
+Researchers did this across a sample of 200,000 records and found that the UUID timestamps matched the Chess.com account creation dates. This gave them strong evidence that the data was legitimate.
 
 2. But now, the most interesting part of this whole blog is the `gam_audiences` and `audiences_member_of` fields.
 
