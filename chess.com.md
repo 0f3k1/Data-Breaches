@@ -104,20 +104,12 @@ Instead, the evidence points toward automated scraping and data harvesting, wher
 That doesn't mean the incident isn't important. Millions of email addresses were connected with Chess.com account information, making the dataset much more useful for things like phishing and social engineering.
 
 ### What We Still Don't Know
-This is probably the most important part.
 
-We do not know the complete technical attack chain. 
+There are still some important gaps in the attack chain. We don't know the exact endpoint or requests used to match the emails to Chess.com accounts, what information those requests returned, or exactly where every field in the dataset came from. 
 
-We currently don't know the exact 2026 endpoint used for the email lookup. 
+We also don't know whether the scraper used one request or multiple requests to gather all of the additional account information. 
 
-We don't know exactly what that lookup returned. 
-
-We don't know whether one request or multiple requests were used to collect the information. 
-
-And we don't know the exact source of every field contained in the dataset. 
-
-So rather than guessing, I'm going to mark those parts of the attack chain as unknown. That leaves us with:
-```External email list -> Chess.com lookup -> Matching account ->  Additional account information -> Automated collection -> 7.3M records```
+Because these technical details haven't been publicly disclosed, we can't fully recreate exactly how the scraping process worked.
 
 ### More Information and Insight...
 1. What is a UUID?
