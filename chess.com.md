@@ -1,4 +1,4 @@
-Heads up: there isn't a lot to explain because a lot of the insights about the data breach aren't publicly disclosed, so bear that in mind as you read through it.
+Heads up: there isn't a lot to explain because a lot of the insights about the data breach aren't publicly disclosed, so bear that in mind.
 
 ## What happened?
 
