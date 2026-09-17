@@ -152,7 +152,9 @@ Thinking about it like this, let's say I created a Chess.com account right now, 
 
 And so when those timestamps matched, it provided them with the evidence that the UUIDs in the dataset were legitimate Chess.com identifiers. 
 
-2. But now, the most interesting part of this whole blog the `gam_audiences` and `audiences_member_of` fields.
+2. But now, the most interesting part of this whole blog is the `gam_audiences` and `audiences_member_of` fields.
+
+From my understanding, the gam_audiences field refers to Google Ad Manager audiences, or groups used for advertising and targeting, while audiences_member_of indicates which of those audience groups a particular user belonged to.
 
 These fields were reported to contain audience segmentation information, such as trial eligibility, experiment groups, lapsed-user groups, and rating-based targeting. 
 
@@ -166,3 +168,4 @@ But at this point, we simply don't know. Without knowing the exact endpoint or r
 ### Sources
 https://haveibeenpwned.com/Breach/Chess2026 
 https://securityaffairs.com/197174/breaking-news/chess-com-leak-exposes-7-3-million-users-evidence-points-to-scraping.html
+If you want a better understanding of the structure of UUIDs, you can check out: https://www.sohamkamani.com/uuid-versions-explained/
