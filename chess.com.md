@@ -4,7 +4,7 @@ Heads up: there isn't a lot to explain because a lot of the insights about the d
 
 Back in August 2026, a dataset containing more than 7.3 million Chess.com records appeared on a forum called BreachForums. At first, this sounds like a normal data breach where someone hacked into Chess.com and was able to dump a bunch of information from a database.
 
-However... the available evidence suggests something more like automated data harvesting, also commonly referred to as scraping.
+However, the available evidence suggests something more like automated data harvesting, also commonly referred to as scraping.
 
 The important difference is that there is currently no evidence showing that the person who created the dataset broke into Chess.com's internal database. Instead, it appears that information was collected through Chess.com's web-facing systems over time. 
 
