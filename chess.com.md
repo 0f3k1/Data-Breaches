@@ -1,4 +1,4 @@
-Heads up there isn't a lot to explain because a lot of the insights about the data breach aren't publicly disclosed yet, so bear that in mind as you read through it.
+Heads up: there isn't a lot to explain because a lot of the insights about the data breach aren't publicly disclosed, so bear that in mind as you read through it.
 
 ## What happened?
 
@@ -142,3 +142,27 @@ So rather than guessing, I'm going to mark those parts of the attack chain as un
 ```External email list -> Chess.com lookup -> Matching account ->  Additional account information -> Automated collection -> 7.3M records```
 
 ### More Information and Insight...
+1. What is a UUID? A UUID, or Universally Unique Identifier, is simply a unique identifier that a system can use to identify something, like a specific user or account. It can look something like `550e8400-e29b-41d4-a716-446655440000`
+
+But why is this important? In this case, the Chess.com dataset contained version 1 UUID's, and each one of these UUID's contained a timestamp from when it was created.
+
+This gave the researchers a way to check whether the leaked Chess.com account data was legitimate.
+
+Thinking about it like this, let's say I created a Chess.com account right now, the current date and time of writing this post: September 16, 2026 at 7:58 PM, at the same time a decoded UUID timestamp is created for the same time. Researchers could compare the timestamp hidden inside the UUID with the account's actual registration date.
+
+And so when those timestamps matched, it provided them with the evidence that the UUIDs in the dataset were legitimate Chess.com identifiers. 
+
+2. But now, the most interesting part of this whole blog the `gam_audiences` and `audiences_member_of` fields.
+
+These fields were reported to contain audience segmentation information, such as trial eligibility, experiment groups, lapsed-user groups, and rating-based targeting. 
+
+This stands out because this type of information is very different from normal public profile information like a username, country, or chess rating. 
+
+So this raises an interesting question: if this data was collected through scraping, how was this additional information obtained? 
+
+But at this point, we simply don't know. Without knowing the exact endpoint or requests used by the scraper, we shouldn't assume where these fields came from.
+
+
+### Sources
+https://haveibeenpwned.com/Breach/Chess2026 
+https://securityaffairs.com/197174/breaking-news/chess-com-leak-exposes-7-3-million-users-evidence-points-to-scraping.html
